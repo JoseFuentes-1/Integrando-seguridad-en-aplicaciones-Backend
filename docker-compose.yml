@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  mysql-minimarket:
+    image: mysql:8.0
+    container_name: db_minimarket
+    restart: always
+    environment:
+      MYSQL_DATABASE: minimarket
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - minimarket_data:/var/lib/mysql
+
+volumes:
+  minimarket_data:
